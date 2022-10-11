@@ -13,7 +13,8 @@
 
     <bean id="koreanGreeter"
           class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"
-          scope="singleton">
+          scope="singleton"
+          destroy-method="destroy">
     </bean>
 
 </beans>

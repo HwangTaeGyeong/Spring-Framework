@@ -14,5 +14,6 @@ public class XmlMain {
         context.getBean("koreanGreeter", MessageSender.class).sendMessage(new User("aasd","asd"),"asdf");
         context.getBean("koreanGreeter", MessageSender.class).sendMessage(new User("aasd","asd"),"asdf");
 
+        context.close();
     }
 }
