@@ -5,10 +5,14 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="englishGreeter" class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender" >
+    <bean id="englishGreeter"
+          class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender"
+          scope="prototype" >
     </bean>
 
-    <bean id="koreanGreeter" class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender" >
+    <bean id="koreanGreeter"
+          class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"
+          scope="singleton" >
     </bean>
 
 </beans>
