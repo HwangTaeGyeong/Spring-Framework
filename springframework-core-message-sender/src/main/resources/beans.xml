@@ -7,17 +7,17 @@
 
     <bean id="englishGreeter"
           class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender"
-          scope="prototype"
-          init-method="init">
+          scope="prototype">
     </bean>
 
     <bean id="koreanGreeter"
           class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"
-          scope="singleton"
-          destroy-method="destroy">
+          scope="singleton">
     </bean>
 
-    <bean id="MessageSendService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService" >
+    <bean id="messageSendService"
+          class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService"
+          autowire="byName">
         <constructor-arg ref="englishGreeter"/>
     </bean>
 
