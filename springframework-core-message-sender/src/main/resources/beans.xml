@@ -7,12 +7,13 @@
 
     <bean id="englishGreeter"
           class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender"
-          scope="prototype" >
+          scope="prototype"
+          init-method="init">
     </bean>
 
     <bean id="koreanGreeter"
           class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"
-          scope="singleton" >
+          scope="singleton">
     </bean>
 
 </beans>
