@@ -17,4 +17,10 @@
           destroy-method="destroy">
     </bean>
 
+    <bean id="MessageSendService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService" >
+        <constructor-arg ref="englishGreeter"/>
+        <constructor-arg ref="koreanGreeter"/>
+    </bean>
+
+
 </beans>
