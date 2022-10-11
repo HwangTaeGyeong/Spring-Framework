@@ -1,15 +1,13 @@
 package com.nhnacademy.edu.springframework.messagesender;
 
+import com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender;
+import com.nhnacademy.edu.springframework.messagesender.service.MessageSendService;
+import com.nhnacademy.edu.springframework.messagesender.service.MessageSender;
+import com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender;
+
 public class Main {
     public static void main(String args[]) {
-        Main main = new Main();
-        User user = new User("nhnacademy.com", "010-1234-5678");
-        main.sendSmsMessage(user, "message");
-    }
-    public void sendSmsMessage(User user, String message) {
-        System.out.println( "SMS Message Sent to ${" + user.phoneNumber + "} : ${" + message + "}");
-    }
-    public void sendEmailMessage(User user, String message) {
-        System.out.println( "Email Message Sent ${" + user.email + "} : ${" + message + "}");
+        new MessageSendService(new SmsMessageSender()).doSendMessage();
+        new MessageSendService(new EmailMessageSender()).doSendMessage();
     }
 }
