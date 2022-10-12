@@ -16,14 +16,17 @@
 <!--          scope="singleton">-->
 <!--    </bean>-->
 
-    <bean id="koreanGreeter"
-          class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"
-          scope="prototype">
-    </bean>
+<!--    <bean id="koreanGreeter"-->
+<!--          class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"-->
+<!--          scope="prototype">-->
+<!--    </bean>-->
 
     <bean id="messageSendService"
           class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService">
     </bean>
 
+    <bean id="dbms" class="java.lang.String">
+        <constructor-arg type="java.lang.String" value="MYSQL" />
+    </bean>
 
 </beans>
