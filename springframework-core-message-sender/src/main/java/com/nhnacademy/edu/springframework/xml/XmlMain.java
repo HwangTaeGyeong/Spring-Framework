@@ -1,4 +1,4 @@
-package xml;
+package com.nhnacademy.edu.springframework.xml.xml;
 
 import com.nhnacademy.edu.springframework.messagesender.User;
 import com.nhnacademy.edu.springframework.messagesender.service.MessageSendService;
@@ -7,7 +7,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class XmlMain {
     public static void main(String args[]) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        String location = "classpath:/beans.xml";
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(location);
 
         MessageSendService service = context.getBean("messageSendService", MessageSendService.class);
         service.doSendMessage();
